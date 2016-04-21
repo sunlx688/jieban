@@ -20,10 +20,10 @@ class Jieban():
         location = soup.find(attrs={'class':'dgwDest'}).text.strip()
         startdate = soup.find(attrs={'class':'dgwDate'}).find_all('em')[0].text
         enddate = soup.find(attrs={'class':'dgwDate'}).find_all('em')[1].text
-        alldate = soup.find(attrs={'class':'dgwDate'}).find_all('em')[2].text
+        alldates = soup.find(attrs={'class':'dgwDate'}).find_all('em')[2].text
         contact = soup.find(attrs={'class':'dgwContact'}).text
         info = soup.find(attrs={'class':'dgwDetail'}).text
-        return username, releasetime, title, location, startdate, enddate, alldate, contact, info
+        return username, releasetime, title, location, startdate, enddate, alldates, contact, info
 
 jieban = Jieban()
 print(jieban.spi())
